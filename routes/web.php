@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UnitController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/',[MyCommerceController::class, 'index'])->name('home');
 
@@ -48,5 +49,14 @@ Route::middleware([
     Route::get('unit/edit/{id}', [UnitController::class, 'edit'])->name('unit.edit');
     Route::post('unit/update', [UnitController::class, 'update'])->name('unit.update');
     Route::post('unit/delete', [UnitController::class, 'remove'])->name('unit.delete');
+
+    //Product Controller
+    Route::get('product/add', [ProductController::class, 'index'])->name('product.add');
+    Route::post('product/new', [ProductController::class, 'store'])->name('product.new');
+    Route::get('product/get-subcategory-by-category', [ProductController::class, 'getSubCategoryByCategory'])->name('product.get-subcategory-by-category');
+    Route::get('product/manage', [ProductController::class, 'manage'])->name('product.manage');
+    Route::get('product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('product/update', [ProductController::class, 'update'])->name('product.update');
+    Route::post('product/delete', [ProductController::class, 'remove'])->name('product.delete');
 
 });

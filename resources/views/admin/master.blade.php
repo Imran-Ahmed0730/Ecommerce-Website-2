@@ -496,6 +496,31 @@
 {{--<!--  Customizer -->--}}
 {{--<!--  Import Js Files -->--}}
 @include('admin.include.script')
+<script>
+    $(function (){
+        $(document).on('change', '#CategoryId', function () {
+            var categoryId = $(this).val();
+            $.ajax({
+                type:"GET",
+                url:"{{route('product.get-subcategory-by-category')}}",
+                data:{id:categoryId},
+                dataType: "JSON",
+                success: function (response) {
+                    var subCategoryId = $('#SubCategoryId');
+                    subCategoryId.empty();
+                    var option = '';
+                    option += "<option selected>--Select Sub-Category--</option>";
+                    $.each(response, function (key, value) {
+                        option += '<option value="' + value.id + '">' + value.name + '</option>';
+                    });
+
+                    subCategoryId.append(option);
+                }
+            });
+        });
+    });
+
+</script>
 </body>
 
 <!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 15:51:29 GMT -->

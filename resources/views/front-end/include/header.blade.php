@@ -103,33 +103,6 @@
                                     <a class="nav-link" href="index.html">
                                         Home
                                     </a>
-                                    <span class="open-submenu">
-                                                <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg"
-                                                     width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                     stroke-linejoin="round">
-                                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                                </svg>
-                                            </span>
-                                </div>
-                                <div class="submenu-transform submenu-transform-desktop">
-                                    <ul class="submenu list-unstyled">
-                                        <li class="menu-list-item nav-item-sub">
-                                            <a class="nav-link-sub nav-text-sub" href="index.html">Home 1</a>
-                                        </li>
-                                        <li class="menu-list-item nav-item-sub">
-                                            <a class="nav-link-sub nav-text-sub" href="index-shoe.html">Home
-                                                2</a>
-                                        </li>
-                                        <li class="menu-list-item nav-item-sub">
-                                            <a class="nav-link-sub nav-text-sub" href="index-bag.html">Home
-                                                3</a>
-                                        </li>
-                                        <li class="menu-list-item nav-item-sub">
-                                            <a class="nav-link-sub nav-text-sub" href="index-tools.html">Home
-                                                4</a>
-                                        </li>
-                                    </ul>
                                 </div>
                             </li>
                             <li class="menu-list-item nav-item has-megamenu">
@@ -147,134 +120,28 @@
                                             </span>
                                 </div>
                                 <div class="submenu-transform submenu-transform-desktop">
-                                    <div class="container">
+                                    <div class="container" style="text-align: left">
                                         <ul class="submenu megamenu-container list-unstyled">
-                                            <li class="menu-list-item nav-item-sub">
-                                                <div class="mega-menu-header">
-                                                    <a class="nav-link-sub nav-text-sub megamenu-heading"
-                                                       href="collection-left-sidebar.html">
-                                                        CATEGORY PAGES
-                                                    </a>
-                                                </div>
-                                                <div class="submenu-transform megamenu-transform">
-                                                    <ul class="megamenu list-unstyled">
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="collection-left-sidebar.html">With Left
-                                                                Sidebar</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="collection-right-sidebar.html">With Right
-                                                                Sidebar</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="collection-left-sidebar.html">3 Column
-                                                                Layout</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="collection-without-sidebar.html">4 Column
-                                                                Layout</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="collection-without-sidebar.html">Without
-                                                                Sidebar</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="menu-list-item nav-item-sub">
-                                                <div
-                                                    class="mega-menu-header d-flex align-items-center justify-content-between">
-                                                    <a class="nav-link-sub nav-text-sub megamenu-heading"
-                                                       href="collection-right-sidebar.html">
-                                                        PRODUCT PAGES
-                                                    </a>
-                                                </div>
-                                                <div class="submenu-transform megamenu-transform">
-                                                    <ul class="megamenu list-unstyled">
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Simple Product</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Variable Product</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Sale Product</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Featured & On Sale</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product-2.html">Tab Inside</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="menu-list-item nav-item-sub">
-                                                <div
-                                                    class="mega-menu-header d-flex align-items-center justify-content-between">
-                                                    <a class="nav-link-sub nav-text-sub megamenu-heading"
-                                                       href="index.html">
-                                                        PRODUCT LAYOUTS
-                                                    </a>
-                                                </div>
-                                                <div class="submenu-transform megamenu-transform">
-                                                    <ul class="megamenu list-unstyled">
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product-2.html">Grid Images</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Vertical Thumb</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Gallery Type</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Product Width Layout</a>
-                                                        </li>
-                                                        <li class="menu-list-item nav-item-sub">
-                                                            <a class="nav-link-sub nav-text-sub"
-                                                               href="product.html">Sticky Gallery</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="menu-list-item nav-item-sub">
-                                                <div
-                                                    class="mega-menu-header d-flex align-items-center justify-content-between">
-                                                    <a class="mega-menu-img nav-link-sub nav-text-sub"
-                                                       href="collection-left-sidebar.html">
-                                                        <img class="menu-img" src="{{asset('/')}}/front-end/assets/img/menu/1.jpg" alt="img">
-                                                        <h2 class="img-menu-heading text_16 mt-2">Featured
-                                                            Collection</h2>
-                                                        <div
-                                                            class="img-menu-action text_12 bg-transparent p-0">
-                                                            <span>DISCOVER NOW</span>
-                                                            <span>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                             width="30" height="18" fill="#000"
-                                                                             class="icon-right-long" viewBox="0 0 16 16">
-                                                                            <path fill-rule="evenodd"
-                                                                                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                                                        </svg>
-                                                                    </span>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </li>
+                                            @foreach($categories as $category)
+                                                <li class="menu-list-item nav-item-sub">
+                                                    <div class="mega-menu-header">
+                                                        <a class="nav-link-sub nav-text-sub megamenu-heading"
+                                                           href="collection-left-sidebar.html">
+                                                            {{$category->name}}
+                                                        </a>
+                                                    </div>
+                                                    <div class="submenu-transform megamenu-transform">
+                                                        <ul class="megamenu list-unstyled">
+                                                            @foreach($category->subcategory as $subcategory)
+                                                                <li class="menu-list-item nav-item-sub">
+                                                                    <a class="nav-link-sub nav-text-sub"
+                                                                       href="collection-left-sidebar.html">{{$subcategory->name}}</a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
