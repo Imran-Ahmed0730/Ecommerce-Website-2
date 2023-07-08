@@ -1,0 +1,20 @@
+1. Category And Sub-Category has 1-Many Relationship.
+2. For Showing Admin-user name used
+3. For storing Imag Path helper function was used.
+	created a helper.php file in the app/helper directory
+	in the composer.json file, in the autoload, "files": ["app/helper/helper.php"] was included
+4. For showing Cateogry in every page section added the code below in the AppProvider file in the app/Providers
+	View::composer('front-end.include.header', function ($view){
+            $view->with(
+                'categories',Category::all()
+            );
+
+        });
+5. For Adding Summernote followed the below tutorial:
+	URL:https://youtu.be/ckWEp3iMC2U
+6. Getting SubCategory based on category
+
+7. Storing multiple images 
+	the input tag's name must be named as array such as other_image[]
+	Individual Model and datatable needed to be maintained.
+8. 

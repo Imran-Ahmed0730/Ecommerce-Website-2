@@ -26,9 +26,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-//        return $request;
         $this->product = Product::store($request);
-//        return $request->other_image;
         OtherImage::saveImageUrl($request->other_image, $this->product->id, $this->product->name);
         return redirect('/product/manage')->with('message', 'Product Added Successfully');
     }
