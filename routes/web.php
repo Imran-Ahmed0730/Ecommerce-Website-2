@@ -10,6 +10,8 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/',[MyCommerceController::class, 'index'])->name('home');
+Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCategoryProduct'])->name('category.show-all');
+Route::get('subcategory/product/all/{id}',[MyCommerceController::class, 'getAllSubCategoryProduct'])->name('subcategory.show-all');
 
 Route::middleware([
     'auth:sanctum',
@@ -55,6 +57,7 @@ Route::middleware([
     Route::post('product/new', [ProductController::class, 'store'])->name('product.new');
     Route::get('product/get-subcategory-by-category', [ProductController::class, 'getSubCategoryByCategory'])->name('product.get-subcategory-by-category');
     Route::get('product/manage', [ProductController::class, 'manage'])->name('product.manage');
+    Route::get('product/details/{id}', [ProductController::class, 'details'])->name('product.details');
     Route::get('product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
     Route::post('product/update', [ProductController::class, 'update'])->name('product.update');
     Route::post('product/delete', [ProductController::class, 'remove'])->name('product.delete');

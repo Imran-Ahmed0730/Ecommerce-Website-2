@@ -46,6 +46,11 @@
         --section-subheading-font-weight: 400;
     }
 </style>
+<style>
+    i{
+        font-size: 20px;
+    }
+</style>
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/style2.min.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/vendor.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/style.css">

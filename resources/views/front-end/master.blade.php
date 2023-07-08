@@ -1,10 +1,6 @@
-
 <!doctype html>
 <html lang="en" class="no-js">
 
-
-<!-- Mirrored from spreethemesprevious.github.io/bisum/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Jun 2023 07:46:13 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <title>
         @yield('title')
@@ -15,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="meta description">
     <link rel="shortcut icon" href="{{asset('/')}}/front-end/assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -25,6 +23,7 @@
 </head>
 
 <body>
+
 <div class="preloader js-preloader flex-center" style="position: fixed; z-index: 999; background: #609dd7;">
     <div class="dots">
         <div class="dot"></div>
@@ -33,36 +32,19 @@
     </div>
 </div>
 <div class="body-wrapper">
-            <!-- announcement bar start -->
-            @include('front-end.include.header')
-
-            <main id="MainContent" class="content-for-layout">
-                @yield('content')
-            </main>
-    <!-- announcement bar start -->
     @include('front-end.include.header')
-    <!-- announcement bar end -->
-
-    <!-- header start -->
-
-    <!-- header end -->
-
 
     <main id="MainContent" class="content-for-layout">
         @yield('content')
     </main>
 
-<!-- footer start -->
-    @include('front-end.include.footer')
-    <!-- footer end -->
 
-    <!-- scrollup start -->
+    @include('front-end.include.footer')
+
     <button id="scrollup">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
-    <!-- scrollup end -->
 
-    <!-- drawer menu start -->
     <div class="offcanvas offcanvas-start d-flex d-lg-none" tabindex="-1" id="drawer-menu">
         <div class="offcanvas-wrapper">
             <div class="offcanvas-header border-btm-black">
