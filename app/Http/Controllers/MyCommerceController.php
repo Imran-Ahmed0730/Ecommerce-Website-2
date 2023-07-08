@@ -21,4 +21,12 @@ class MyCommerceController extends Controller
             'products'=>Product::where('subcategory_id', $id)->get()
         ]);
     }
+    public function details($id){
+        $product = Product::find($id);
+//        return Product::where('subcategory_id', $product->subcategory_id)->get();
+        return view('front-end.product.details',[
+            'product'=>$product,
+            'products'=>Product::where('subcategory_id', $product->subcategory_id)->get()
+        ]);
+    }
 }

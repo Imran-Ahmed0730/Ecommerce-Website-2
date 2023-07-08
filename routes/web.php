@@ -8,10 +8,16 @@ use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 Route::get('/',[MyCommerceController::class, 'index'])->name('home');
 Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCategoryProduct'])->name('category.show-all');
 Route::get('subcategory/product/all/{id}',[MyCommerceController::class, 'getAllSubCategoryProduct'])->name('subcategory.show-all');
+Route::get('product/about-product/{id}',[MyCommerceController::class, 'details'])->name('product.about-product');
+
+Route::get('cart/add',[CartController::class, 'index'])->name('cart.add');
+Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
 
 Route::middleware([
     'auth:sanctum',

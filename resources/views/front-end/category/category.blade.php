@@ -10,7 +10,7 @@
                     @foreach($products as $product)
                         <div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="700">
                             <div class="article-card bg-transparent p-0 shadow-none">
-                                <a class="article-card-img-wrapper" href="article.html">
+                                <a class="article-card-img-wrapper" href="{{route('product.about-product', ['id'=>$product->id])}}">
                                     <img src="{{asset($product->image)}}" alt="img"
                                          class="article-card-img rounded img-fluid" height="400px">
 
