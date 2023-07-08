@@ -51,8 +51,34 @@
         font-size: 20px;
     }
 </style>
+<style type="text/css">
+
+    .piclist{
+        margin-top: 30px;
+    }
+    .piclist li{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+    }
+    .piclist li img{
+        width: 100%;
+        height: auto;
+    }
+
+    /* custom style */
+    .picZoomer-pic-wp,
+    .picZoomer-zoom-wp{
+        border: 1px solid #fff;
+    }
+
+
+</style>
+{{--<link rel="stylesheet" type="text/css" href="{{asset('/')}}/front-end/assets/css/reset.css">--}}
+<link rel="stylesheet" type="text/css" href="{{asset('/')}}/front-end/assets/css/jquery-picZoomer.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/style2.min.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/vendor.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/style.css">
+
 
 
