@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use function Symfony\Component\String\s;
 
 class OtherImage extends Model
 {
@@ -24,5 +25,22 @@ class OtherImage extends Model
         self::$imageUrl = self::$directory.self::$imageName;
         $image->move(self::$directory, self::$imageName);
         return self::$imageUrl;
+    }
+
+    public static function updateImage($images, $id, $folderName){
+        if($images){
+            self::deleteImages($id);
+            self::saveImageUrl($images, $id, $folderName);
+        }
+    }
+
+    public static function deleteImages($id){
+        self::$otherImage = OtherImage::where('product_id', $id)->get();
+        foreach (self::$otherImage as $item){
+            if (file_exists($item->image)){
+                unlink($item->image);
+                $item->delete();
+            }
+        }
     }
 }

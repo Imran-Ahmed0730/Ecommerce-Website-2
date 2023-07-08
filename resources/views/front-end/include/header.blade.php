@@ -90,7 +90,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-4">
                     <div class="header-logo">
-                        <a href="index.html" class="logo-main">
+                        <a href="{{route('home')}}" class="logo-main">
                             <img src="{{asset('/')}}/front-end/assets/img/logo.png" loading="lazy" alt="bisum">
                         </a>
                     </div>
@@ -100,7 +100,7 @@
                         <ul class="main-menu list-unstyled justify-content-center">
                             <li class="menu-list-item nav-item has-dropdown active">
                                 <div class="mega-menu-header">
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="{{route('home')}}">
                                         Home
                                     </a>
                                 </div>
@@ -121,21 +121,21 @@
                                 </div>
                                 <div class="submenu-transform submenu-transform-desktop">
                                     <div class="container" style="text-align: left">
-                                        <ul class="submenu megamenu-container list-unstyled">
+                                        <ul class="submenu megamenu-container list-unstyled" >
                                             @foreach($categories as $category)
                                                 <li class="menu-list-item nav-item-sub">
                                                     <div class="mega-menu-header">
                                                         <a class="nav-link-sub nav-text-sub megamenu-heading"
-                                                           href="collection-left-sidebar.html">
+                                                           href="{{route('category.show-all', ['id'=>$category->id])}}">
                                                             {{$category->name}}
                                                         </a>
                                                     </div>
                                                     <div class="submenu-transform megamenu-transform">
                                                         <ul class="megamenu list-unstyled">
                                                             @foreach($category->subcategory as $subcategory)
-                                                                <li class="menu-list-item nav-item-sub">
-                                                                    <a class="nav-link-sub nav-text-sub"
-                                                                       href="collection-left-sidebar.html">{{$subcategory->name}}</a>
+                                                                <li class="menu-list-item nav-item-sub" style="padding: 3px 0">
+                                                                    <a class="nav-link-sub nav-text-sub mb-0"
+                                                                       href="{{route('subcategory.show-all', ['id'=>$subcategory->id])}}">{{$subcategory->name}}</a>
                                                                 </li>
                                                             @endforeach
                                                         </ul>

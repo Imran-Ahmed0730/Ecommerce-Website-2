@@ -38,154 +38,62 @@
                         <table class="table align-middle text-nowrap mb-0">
                             <thead>
                             <tr>
-                                <th scope="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                </th>
-                                <th scope="col">Products</th>
-                                <th scope="col">Date</th>
+                                <th scope="col">SL</th>
+                                <th scope="col">Product Image</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Product Code</th>
+                                <th scope="col">Stock Amount</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Price</th>
                                 <th scope="col">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../dist/images/products/s1.jpg" class="rounded-circle" alt="..." width="56" height="56">
-                                        <div class="ms-3">
-                                            <h6 class="fw-semibold mb-0 fs-4">How Innovation Works</h6>
-                                            <p class="mb-0">books</p>
+                            @php $i=1; @endphp
+                            @foreach($products as $product)
+                                <tr>
+                                    <td><h6 class="mb-0 fs-4">{{$i++}}</h6></td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="{{asset($product->image)}}" class="rounded-circle" alt="..." width="56" height="56">
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0">Thu, Jan 12 2023</p>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="bg-success p-1 rounded-circle"></span>
-                                        <p class="mb-0 ms-2">InStock</p>
-                                    </div>
-                                </td>
-                                <td><h6 class="mb-0 fs-4">$275</h6></td>
-                                <td><a class="fs-6 text-muted" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"><i class="ti ti-dots-vertical"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../dist/images/products/s2.jpg" class="rounded-circle" alt="..." width="56" height="56">
-                                        <div class="ms-3">
-                                            <h6 class="fw-semibold mb-0 fs-4">Psalms Book for Growth</h6>
-                                            <p class="mb-0">books</p>
+                                    </td>
+                                    <td>
+                                        <div class="">
+                                            <h6 class="fw-semibold mb-0 fs-4">{{$product->name}}</h6>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0">Thu, Jan 10 2023</p>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="bg-danger p-1 rounded-circle"></span>
-                                        <p class="mb-0 ms-2">Out of Stock</p>
-                                    </div>
-                                </td>
-                                <td><h6 class="mb-0 fs-4">$89</h6></td>
-                                <td><a class="fs-6 text-muted" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"><i class="ti ti-dots-vertical"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../dist/images/products/s3.jpg" class="rounded-circle" alt="..." width="56" height="56">
-                                        <div class="ms-3">
-                                            <h6 class="fw-semibold mb-0 fs-4">The Psychology of Money</h6>
-                                            <p class="mb-0">fashionbooks</p>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <p class="mb-0 ms-2">{{$product->code}}</p>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0">Thu, Jan 12 2023</p>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="bg-success p-1 rounded-circle"></span>
-                                        <p class="mb-0 ms-2">InStock</p>
-                                    </div>
-                                </td>
-                                <td><h6 class="mb-0 fs-4">$125</h6></td>
-                                <td><a class="fs-6 text-muted" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"><i class="ti ti-dots-vertical"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../dist/images/products/s4.jpg" class="rounded-circle" alt="..." width="56" height="56">
-                                        <div class="ms-3">
-                                            <h6 class="fw-semibold mb-0 fs-4">Boat Headphone</h6>
-                                            <p class="mb-0">electronics</p>
+                                    </td>
+                                    <td><h6 class="mb-0 fs-4">{{$product->stock_amount}}</h6></td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            @if($product->status == 1)
+                                                <span class="bg-success p-1 rounded-circle"></span>
+                                            @else
+                                                <span class="bg-warning p-1 rounded-circle"></span>
+                                            @endif
+                                                <h6 class="mb-0 fs-4">{{$product->status == 1 ? "Published": "Unpublished"}}</h6>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="mb-0">Mon, Jan 16 2023</p>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <span class="bg-success p-1 rounded-circle"></span>
-                                        <p class="mb-0 ms-2">InStock</p>
-                                    </div>
-                                </td>
-                                <td><h6 class="mb-0 fs-4">$50</h6></td>
-                                <td><a class="fs-6 text-muted" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"><i class="ti ti-dots-vertical"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="border-bottom-0">
-                                    <div class="form-check mb-0">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                </td>
-                                <td class="border-bottom-0">
-                                    <div class="d-flex align-items-center">
-                                        <img src="../../dist/images/products/s5.jpg" class="rounded-circle" alt="..." width="56" height="56">
-                                        <div class="ms-3">
-                                            <h6 class="fw-semibold mb-0 fs-4">MacBook Air Pro</h6>
-                                            <p class="mb-0">fashionelectronics</p>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group " style="font-size: 18px;">
+                                            <a href="{{route('product.details', ['id'=>$product->id])}}" class="btn btn-outline-secondary" style="border-radius: 15%;">
+                                                <i class="bi bi-info-square"></i></a>
+                                            <a href="{{route('product.edit', ['id'=>$product->id])}}" class="btn btn-outline-primary mx-2" style="border-radius: 15%;">
+                                                <i class="bi bi-pen"></i></a>
+                                            <form action="{{route('product.delete')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{$product->id}}">
+                                                <button type="submit" class="btn btn-outline-danger" onclick="confirm('Please Confirm Before Deleting it!!')">
+                                                    <i class="bi bi-trash-fill"></i></button>
+                                            </form>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="border-bottom-0">
-                                    <p class="mb-0">Wed, Jan 18 2023</p>
-                                </td>
-                                <td class="border-bottom-0">
-                                    <div class="d-flex align-items-center">
-                                        <span class="bg-danger p-1 rounded-circle"></span>
-                                        <p class="mb-0 ms-2">Out of Stock</p>
-                                    </div>
-                                </td>
-                                <td class="border-bottom-0"><h6 class="mb-0 fs-4">$650</h6></td>
-                                <td class="border-bottom-0"><a class="fs-6 text-muted" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edit"><i class="ti ti-dots-vertical"></i></a></td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                         <div class="d-flex align-items-center justify-content-end py-1">

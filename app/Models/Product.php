@@ -4,6 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\Brand;
+use App\Models\Unit;
+use App\Models\OtherImage;
 
 class Product extends Model
 {
@@ -66,7 +71,7 @@ class Product extends Model
     }
 
     public function brand(){
-        return $this->belongsTo(SubProduct::class);
+        return $this->belongsTo(Brand::class);
     }
 
     public function unit(){
@@ -74,6 +79,6 @@ class Product extends Model
     }
 
     public function otherImages(){
-        return $this->hasMany(OtherImages::class);
+        return $this->hasMany(OtherImage::class);
     }
 }

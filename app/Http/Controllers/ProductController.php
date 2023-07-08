@@ -38,20 +38,31 @@ class ProductController extends Controller
             'products'=>Product::all()
         ]);
     }
-
-    public function edit($id){
-        return view('admin.product.edit', [
+    public function details($id){
+        return view('admin.product.details', [
             'product'=>Product::find($id)
         ]);
     }
 
+    public function edit($id){
+        return view('admin.product.edit', [
+            'product'=>Product::find($id),
+            'categories'=>Category::all(),
+            'subcategories'=>SubCategory::all(),
+            'brands'=> Brand::all(),
+            'units'=> Unit::all()
+        ]);
+    }
+
     public function update(Request $request){
-        Product::store($request);
+        $this->product= Product::store($request);
+        OtherImage::updateImage($request->other_image, $this->product->id, $this->product->name);
         return redirect('/product/manage')->with('message', 'Product Info Updated Successfully');
     }
 
     public function remove(Request $request){
         Product::remove($request->id);
+        OtherImage::deleteImages($request->id);
         return back()->with('message', 'Product Deleted Successfully');
     }
 }
