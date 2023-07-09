@@ -74,8 +74,8 @@
 
 
 </style>
-{{--<link rel="stylesheet" type="text/css" href="{{asset('/')}}/front-end/assets/css/reset.css">--}}
-<link rel="stylesheet" type="text/css" href="{{asset('/')}}/front-end/assets/css/jquery-picZoomer.css">
+<link rel="stylesheet" type="text/css" href="{{asset('/')}}/front-end/assets/css/xzoom.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{asset('/')}}/front-end/assets/css/demo.css" media="all" />
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/style2.min.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/vendor.css">
 <link rel="stylesheet" href="{{asset('/')}}/front-end/assets/css/style.css">

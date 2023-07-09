@@ -7,61 +7,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12 col-12">
-                    <div class="picZoomer">
-                        <img src="{{asset($product->image)}}" height="320" width="320" alt="" class="mx-3">
-                    </div>
-
-                    <ul class="piclist" style="padding-right: 18rem; padding-left: 0; margin-left: 0">
-                        @foreach($product->otherImages as $item)
-                            <li><img src="{{asset($item->image)}}" alt=""></li>
-                        @endforeach
-                    </ul>
-{{--                    <div class="product-gallery product-gallery-vertical d-flex">--}}
-{{--                        <div class="product-img-large">--}}
-{{--                            <div class="img-large-slider common-slider" data-slick='{--}}
-{{--                                        "slidesToShow": 1,--}}
-{{--                                        "slidesToScroll": 1,--}}
-{{--                                        "dots": false,--}}
-{{--                                        "arrows": false,--}}
-{{--                                        "asNavFor": ".img-thumb-slider"--}}
-{{--                                    }'>--}}
-{{--                                <div class="img-large-wrapper picZoomer">--}}
-{{--                                        <img src="{{asset($product->image)}}" alt="img">--}}
-{{--                                </div>--}}
-{{--                                @foreach($product->otherImages as $item)--}}
-{{--                                    <div class="img-large-wrapper picZoomer">--}}
-{{--                                            <img src="{{asset($item->image)}}" alt="img">--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="product-img-thumb">--}}
-{{--                            <div class="img-thumb-slider common-slider" data-vertical-slider="true" data-slick='{--}}
-{{--                                        "slidesToShow": 5,--}}
-{{--                                        "slidesToScroll": 1,--}}
-{{--                                        "dots": false,--}}
-{{--                                        "arrows": true,--}}
-{{--                                        "infinite": false,--}}
-{{--                                        "speed": 300,--}}
-{{--                                        "cssEase": "ease",--}}
-{{--                                        "focusOnSelect": true,--}}
-{{--                                        "swipeToSlide": true,--}}
-{{--                                        "asNavFor": ".img-large-slider"--}}
-{{--                                    }'>--}}
-
-{{--                                @foreach($product->otherImages as $item)--}}
-{{--                                    <div>--}}
-{{--                                        <div class="img-thumb-wrapper piclist">--}}
-{{--                                            <img src="{{asset($item->image)}}" alt="img">--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-
-{{--                            </div>--}}
-{{--                            <div class="activate-arrows show-arrows-always arrows-white d-none d-lg-flex justify-content-between mt-3"></div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <section id="magnific" align="left" style="min-height: 0">
+                        <div class="row">
+                            <div class="large-5 column">
+                                <div class="xzoom-container">
+                                    <img class="xzoom5" id="xzoom-magnific" src="{{ asset($product->image) }}" xoriginal="{{ asset($product->image) }}" height="320px" width="320px"/>
+                                    <div class="xzoom-thumbs my-2">
+                                        @foreach($product->otherImages as $item)
+                                            <a href="{{ asset($item->image) }}" style="padding: 0; border-radius: 0"><img class="xzoom-gallery5" width="120px" src="{{ asset($item->image) }}"  xpreview="{{ asset($item->image) }}"></a>
+                                        @endforeach
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="product-details ps-lg-4" style="text-align: left;">
@@ -84,18 +43,19 @@
                             <strong class="label">Brand Name:</strong> {{$product->brand->name}}
                         </div>
 
+                        <form class="product-form" action="{{route('cart.add', ['id'=>$product->id])}}" method="post">
+                            @csrf
                         <div class="misc d-flex align-items-end justify-content-between mt-4">
                             <div class="quantity d-flex align-items-center justify-content-between">
                                 <button class="qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg" alt="minus"></button>
-                                <input class="qty-input" type="number" name="qty" value="1" min="0">
+                                <input class="qty-input" type="number" name="qty" value="1" min="1" max="{{$product->stock_amount}}">
                                 <button class="qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg" alt="plus"></button>
                             </div>
                         </div>
 
-                        <form class="product-form" action="{{route('cart.add')}}">
-                            <div class="product-form-buttons d-flex align-items-center justify-content-between mt-4">
-                                <button type="submit" class="position-relative btn-atc btn-add-to-cart loader">ADD TO CART</button>
-                            </div>
+                        <div class="product-form-buttons d-flex align-items-center justify-content-between mt-4">
+                            <button type="submit" class="position-relative btn-atc btn-add-to-cart loader">ADD TO CART</button>
+                        </div>
 
                         </form>
                     </div>

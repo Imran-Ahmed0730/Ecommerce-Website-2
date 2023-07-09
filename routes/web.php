@@ -16,7 +16,12 @@ Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCat
 Route::get('subcategory/product/all/{id}',[MyCommerceController::class, 'getAllSubCategoryProduct'])->name('subcategory.show-all');
 Route::get('product/about-product/{id}',[MyCommerceController::class, 'details'])->name('product.about-product');
 
-Route::get('cart/add',[CartController::class, 'index'])->name('cart.add');
+Route::get('cart/show',[CartController::class, 'index'])->name('cart.show');
+Route::post('cart/add/{id}',[CartController::class, 'addToCart'])->name('cart.add');
+Route::post('cart/update-quantity/{id}',[CartController::class, 'updateQty'])->name('cart.update-quantity');
+Route::get('cart/remove/{id}',[CartController::class, 'remove'])->name('cart.remove');
+
+
 Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
 
 Route::middleware([

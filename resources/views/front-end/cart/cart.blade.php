@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <div class="breadcrumb">
+        <h3 class="text-center text-success">{{session('message')}}</h3>
         <div class="container">
             <ul class="list-unstyled d-flex align-items-center m-0">
                 <li><a href="{{route('home')}}">Home</a></li>
@@ -28,139 +29,82 @@
             <div class="container">
                 <div class="cart-page-wrapper">
                     <div class="row">
-                        <div class="col-lg-7 col-md-12 col-12">
+                        <div class="col-lg-8 col-md-12 col-12">
                             <table class="cart-table w-100">
                                 <thead>
                                 <tr>
-                                    <th class="cart-caption heading_18">Product</th>
                                     <th class="cart-caption heading_18"></th>
+                                    <th class="cart-caption heading_18">Product</th>
+                                    <th class="cart-caption heading_18">Brand</th>
+                                    <th class="cart-caption heading_18">Unit Price</th>
                                     <th class="cart-caption text-center heading_18 d-none d-md-table-cell">Quantity</th>
-                                    <th class="cart-caption text-end heading_18">Price</th>
+                                    <th class="cart-caption text-center heading_18">Total Price</th>
+                                    <th class="cart-caption text-center heading_18">Action</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <tr class="cart-item">
-                                    <td class="cart-item-media">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/1.jpg" alt="img">
-                                        </div>
-                                    </td>
-                                    <td class="cart-item-details">
-                                        <h2 class="product-title"><a href="#">Eliot Reversible Sectional</a></h2>
-                                        <p class="product-vendor">XS / Dove Gray</p>
-                                    </td>
-                                    <td class="cart-item-quantity">
-                                        <div class="quantity d-flex align-items-center justify-content-between">
-                                            <button class="qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg"
-                                                                                 alt="minus"></button>
-                                            <input class="qty-input" type="number" name="qty" value="1" min="0">
-                                            <button class="qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg"
-                                                                                 alt="plus"></button>
-                                        </div>
-                                        <a href="#" class="product-remove mt-2">Remove</a>
-                                    </td>
-                                    <td class="cart-item-price text-end">
-                                        <div class="product-price">$580.00</div>
-                                    </td>
-                                </tr>
-                                <tr class="cart-item">
-                                    <td class="cart-item-media">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/2.jpg" alt="img">
-                                        </div>
-                                    </td>
-                                    <td class="cart-item-details">
-                                        <h2 class="product-title"><a href="#">Vita Lounge Chair</a></h2>
-                                        <p class="product-vendor">XS / Pink</p>
-                                    </td>
-                                    <td class="cart-item-quantity">
-                                        <div class="quantity d-flex align-items-center justify-content-between">
-                                            <button class="qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg"
-                                                                                 alt="minus"></button>
-                                            <input class="qty-input" type="number" name="qty" value="1" min="0">
-                                            <button class="qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg"
-                                                                                 alt="plus"></button>
-                                        </div>
-                                        <a href="#" class="product-remove mt-2">Remove</a>
-                                    </td>
-                                    <td class="cart-item-price text-end">
-                                        <div class="product-price">$580.00</div>
-                                    </td>
-                                </tr>
-                                <tr class="cart-item">
-                                    <td class="cart-item-media">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/3.jpg" alt="img">
-                                        </div>
-                                    </td>
-                                    <td class="cart-item-details">
-                                        <h2 class="product-title"><a href="#">Sarno Dining Chair</a></h2>
-                                        <p class="product-vendor">XS / Dove Gray</p>
-                                    </td>
-                                    <td class="cart-item-quantity">
-                                        <div class="quantity d-flex align-items-center justify-content-between">
-                                            <button class="qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg"
-                                                                                 alt="minus"></button>
-                                            <input class="qty-input" type="number" name="qty" value="1" min="0">
-                                            <button class="qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg"
-                                                                                 alt="plus"></button>
-                                        </div>
-                                        <a href="#" class="product-remove mt-2">Remove</a>
-                                    </td>
-                                    <td class="cart-item-price text-end">
-                                        <div class="product-price">$580.00</div>
-                                    </td>
-                                </tr>
-                                <tr class="cart-item">
-                                    <td class="cart-item-media">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/4.jpg" alt="img">
-                                        </div>
-                                    </td>
-                                    <td class="cart-item-details">
-                                        <h2 class="product-title"><a href="#">Eliot Reversible Sectional</a></h2>
-                                        <p class="product-vendor">XS / Dove Gray</p>
-                                    </td>
-                                    <td class="cart-item-quantity">
-                                        <div class="quantity d-flex align-items-center justify-content-between">
-                                            <button class="qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg"
-                                                                                 alt="minus"></button>
-                                            <input class="qty-input" type="number" name="qty" value="1" min="0">
-                                            <button class="qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg"
-                                                                                 alt="plus"></button>
-                                        </div>
-                                        <a href="#" class="product-remove mt-2">Remove</a>
-                                    </td>
-                                    <td class="cart-item-price text-end">
-                                        <div class="product-price">$580.00</div>
-                                    </td>
-                                </tr>
+                                @php $total = 0 @endphp
+                                @foreach($products as $product)
+                                    <tr class="cart-item">
+                                        <td class="cart-item-media">
+                                            <div class="mini-img-wrapper">
+                                                <img class="mini-img rounded-circle" src="{{asset($product->image)}}" alt="img" height="100px" width="100px">
+                                            </div>
+                                        </td>
+                                        <td class="cart-item-details">
+                                            <h6 class="product-title"><a href="#">{{$product->name}}</a></h6>
+                                            <p class="product-vendor">{{$product->category}}</p>
+                                        </td>
+                                        <td class="cart-item-details">
+                                            <p class="product-vendor">{{$product->brand}}</p>
+                                        </td>
+                                        <td class="cart-item-details">
+                                            <p class="product-vendor">{{$product->price}}</p>
+                                        </td>
+                                        <form action="{{route('cart.update-quantity', ['id'=>$product->__raw_id])}}" method="post">
+                                            @csrf
+                                            <td class="cart-item-quantity">
+                                                <div class="quantity d-flex align-items-center justify-content-between">
+                                                    <input class="form-control" type="number" name="qty" value="{{$product->qty}}" min="1">
+                                                </div>
+                                            </td>
+                                            <td class="cart-item-price">
+                                                <div class="product-price">{{$product->total}}</div>
+                                                @php $total += $product->total @endphp
+                                            </td>
+                                            <td>
+                                                <button type="submit" class="btn btn-secondary"><i class="bi bi-arrow-left-right"></i></button>
+                                                <a href="{{route('cart.remove', ['id'=>$product->__raw_id])}}" class="btn btn-outline-danger"
+                                                onclick="confirm('Please Confirm Before Continuing!!')"><i class="bi bi-x-lg"></i></a>
+                                            </td>
+                                        </form>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-lg-5 col-md-12 col-12">
+                        <div class="col-lg-4 col-md-12 col-12">
                             <div class="cart-total-area">
                                 <h3 class="cart-total-title d-none d-lg-block mb-0">Cart Totals</h4>
                                     <div class="cart-total-box mt-4">
                                         <div class="subtotal-item subtotal-box">
                                             <h4 class="subtotal-title">Subtotals:</h4>
-                                            <p class="subtotal-value">$465.00</p>
+                                            <p class="subtotal-value">{{$total}}</p>
                                         </div>
                                         <div class="subtotal-item shipping-box">
                                             <h4 class="subtotal-title">Shipping:</h4>
-                                            <p class="subtotal-value">$10.00</p>
+                                            <p class="subtotal-value">{{$products ? $shipping=0:$shipping=100}}</p>
                                         </div>
                                         <div class="subtotal-item discount-box">
-                                            <h4 class="subtotal-title">Discount:</h4>
-                                            <p class="subtotal-value">$100.00</p>
+                                            <h4 class="subtotal-title">Tax (15%):</h4><br>
+                                            <p class="subtotal-value">{{$tax = round( $total+ $total*0.15)}}</p>
                                         </div>
                                         <hr />
                                         <div class="subtotal-item discount-box">
                                             <h4 class="subtotal-title">Total:</h4>
-                                            <p class="subtotal-value">$1000.00</p>
+                                            <p class="subtotal-value">{{$totalCost = $tax+$shipping+$total}}</p>
                                         </div>
-                                        <p class="shipping_text">Shipping & taxes calculated at checkout</p>
                                         <div class="d-flex justify-content-center mt-4">
                                             <a href="{{route('checkout')}}" class="position-relative btn-primary text-uppercase">
                                                 Proceed to checkout
