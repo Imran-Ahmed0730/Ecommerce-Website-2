@@ -17,4 +17,6 @@
 7. Storing multiple images 
 	the input tag's name must be named as array such as other_image[]
 	Individual Model and datatable needed to be maintained.
-8. 
+8. Storing Products Before Ordering:
+	Overtrue Shopping Cart was used.
+ 
