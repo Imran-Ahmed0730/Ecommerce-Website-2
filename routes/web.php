@@ -27,7 +27,7 @@ Route::get('cart/remove/{id}',[CartController::class, 'remove'])->name('cart.rem
 
 Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
 Route::post('checkout/confirm-order',[CheckoutController::class, 'confirmOrder'])->name('checkout.confirm-order');
-Route::get('checkout/confirm-order/success',[CheckoutController::class, 'success'])->name('checkout.confirm-order.success');
+Route::get('checkout/confirm-order/complete',[CheckoutController::class, 'success'])->name('checkout.confirm-order.success');
 
 Route::get('customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
 Route::get('customer/login', [CustomerController::class, 'login'])->name('customer.login');

@@ -15,7 +15,7 @@ class Order extends Model
     public static function add($id, $request){
         self::$order = new Order();
         self::$order->customer_id = $id;
-        self::$order->order_date = 'Y-m-d';
+        self::$order->order_date = date('Y-m-d');
         self::$order->order_timestamp = strtotime(date('Y-m-d'));
         self::$order->order_total = Session::get('order_total');
         self::$order->shipping_total = Session::get('shipping_total');

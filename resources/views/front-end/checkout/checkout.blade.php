@@ -221,7 +221,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12 mb-3">
                                                                 <label for="firstName">Full name</label>
-                                                                <input type="text" name="customer_name" class="form-control" id="name" placeholder="Your Name"
+                                                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
                                                                         required>
                                                                 <div class="invalid-feedback">
                                                                     Valid customer name is required.
@@ -255,7 +255,7 @@
 
                                                     <div class="mb-3">
                                                         <label for="address">Address</label>
-                                                        <textarea rows="5" class="form-control" id="address"
+                                                        <textarea rows="5" name="delivery_address" class="form-control" id="address"
                                                                    required></textarea>
                                                         <div class="invalid-feedback">
                                                             Please enter your shipping address.

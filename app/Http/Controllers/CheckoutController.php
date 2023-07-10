@@ -41,7 +41,7 @@ class CheckoutController extends Controller
 
             $this->order = Order::add($this->customer->id, $request);
             OrderDetail::add($this->order->id);
-            return redirect('checkout/confirm-order/success')->with('message', 'Your Order Has Been Submitted, Please Wait for the Confirmation!!');
+            return redirect('checkout/confirm-order/complete')->with('message', 'Your Order Has Been Submitted, Please Wait for the Confirmation!!');
         }
 
         else{
