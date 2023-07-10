@@ -12,6 +12,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SslCommerzPaymentController;
 
 Route::get('/',[MyCommerceController::class, 'index'])->name('home');
 Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCategoryProduct'])->name('category.show-all');
@@ -34,6 +35,20 @@ Route::post('customer/login', [CustomerController::class, 'customerLogin'])->nam
 Route::get('customer/register', [CustomerController::class, 'register'])->name('customer.register');
 Route::post('customer/register', [CustomerController::class, 'customerRegister'])->name('customer.register');
 Route::get('customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
 
 Route::middleware([
     'auth:sanctum',
