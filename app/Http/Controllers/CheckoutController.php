@@ -13,7 +13,9 @@ class CheckoutController extends Controller
 {
     private $customer, $order;
     public function index(){
-        return view('front-end.checkout.checkout');
+        return view('front-end.checkout.checkout', [
+            'customer'=>Customer::find(Session::get('customerId'))
+        ]);
     }
 
     public function customerValidate($request){
@@ -25,20 +27,27 @@ class CheckoutController extends Controller
 
     public function confirmOrder(Request $request){
 //        return $request;
-        if (Session::get('customerId')){
-            $this->customer = Customer::find(Session::get('customerId'));
+        if (Session::get('order_total')){
+            if (Session::get('customerId')){
+                $this->customer = Customer::find(Session::get('customerId'));
+            }
+            else{
+                $this->customerValidate($request);
+                $this->customer = Customer::add($request);
+                Session::put('customerId', $this->customer->id);
+                Session::put('customerName', $this->customer->name);
+            }
+
+
+            $this->order = Order::add($this->customer->id, $request);
+            OrderDetail::add($this->order->id);
+            return redirect('checkout/confirm-order/success')->with('message', 'Your Order Has Been Submitted, Please Wait for the Confirmation!!');
         }
+
         else{
-            $this->customerValidate($request);
-            $this->customer = Customer::add($request);
-            Session::put('customerId', $this->customer->id);
-            Session::put('customerName', $this->customer->name);
+            return back()->with('message', 'Place an Order Before Confirming');
         }
 
-
-        $this->order = Order::add($this->customer->id, $request);
-        OrderDetail::add($this->order->id);
-        return redirect('checkout/confirm-order/success')->with('message', 'Your Order Has Been Submitted, Please Wait for the Confirmation!!');
     }
 
     public function success(){

@@ -9,6 +9,7 @@ use Session;
 
 class CustomerController extends Controller
 {
+    private $customer;
     public function index(){
         return view('front-end.customer.dashboard', [
             'orders'=>Order::find(Session::get('customerId'))
@@ -26,11 +27,38 @@ class CustomerController extends Controller
         ]);
     }
 
-//    public function customerLogin(Request $request){
-//        $this->customerValidate($request);
-//
-//        return redirect('customer/dashboard');
-//    }
+    public function customerLogin(Request $request){
+//        return $request;
+        $this->customer = Customer::where('email', $request->email)->first();
+        if ($this->customer){
+            if (password_verify($request->password, $this->customer->password)){
+                Session::put('customerId', $this->customer->id);
+                Session::put('customerName', $this->customer->name);
+                return redirect('customer/dashboard');
+            }
+            else{
+                return back()->with('message', 'Invalid Password, Please Try Again');
+            }
+        }
+        else{
+            return back()->with('message', 'Invalid Email, Please Enter A Valid Email');
+        }
+
+
+    }
+
+    public function register(){
+        return view('front-end.customer.register');
+    }
+    public function customerRegister(Request $request){
+
+        $this->customerValidate($request);
+        $this->customer = Customer::add($request);
+        Session::put('customerId', $this->customer->id);
+        Session::put('customerName', $this->customer->name);
+
+        return redirect('customer/dashboard');
+    }
     public function logout(){
         Session::forget('customerName');
         Session::forget('customerId');

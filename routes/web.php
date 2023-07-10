@@ -31,6 +31,8 @@ Route::get('checkout/confirm-order/success',[CheckoutController::class, 'success
 Route::get('customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
 Route::get('customer/login', [CustomerController::class, 'login'])->name('customer.login');
 Route::post('customer/login', [CustomerController::class, 'customerLogin'])->name('customer.login');
+Route::get('customer/register', [CustomerController::class, 'register'])->name('customer.register');
+Route::post('customer/register', [CustomerController::class, 'customerRegister'])->name('customer.register');
 Route::get('customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
 
 Route::middleware([

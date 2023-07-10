@@ -1,9 +1,8 @@
 @extends('front-end.master')
 @section('title')
-    Customer Login
+    Customer Register
 @endsection
 @section('content')
-    <!-- breadcrumb start -->
     <div class="breadcrumb">
         <div class="container">
             <ul class="list-unstyled d-flex align-items-center m-0">
@@ -18,7 +17,7 @@
                         </g>
                     </svg>
                 </li>
-                <li>Login</li>
+                <li>Register</li>
             </ul>
         </div>
     </div>
@@ -27,29 +26,44 @@
     <main id="MainContent" class="content-for-layout">
         <div class="login-page mt-100">
             <div class="container">
-                <form action="{{route('customer.login')}}" method="post" class="login-form common-form mx-auto">
+                <form action="{{route('customer.register')}}" method="post" class="login-form common-form mx-auto">
                     @csrf
                     <div class="section-header mb-3">
-                        <h2 class="section-heading text-center">Login</h2>
-                        <h4 class="text-danger">{{session('message')}}</h4>
+                        <h2 class="section-heading text-center">Register</h2>
                     </div>
-                    <div class="row">
+                    <div class="row" align="left">
+                        <div class="col-12">
+                            <fieldset>
+                                <label class="label">Full Name</label>
+                                <input type="text"  name="name" required/>
+                            </fieldset>
+                        </div>
+                        <div class="col-12">
+                            <fieldset>
+                                <label class="label">Mobile</label>
+                                <input type="text" name="mobile" required/>
+                                @error('mobile')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </fieldset>
+                        </div>
                         <div class="col-12">
                             <fieldset>
                                 <label class="label">Email address</label>
                                 <input type="email" name="email" required/>
+                                @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </fieldset>
                         </div>
                         <div class="col-12">
                             <fieldset>
                                 <label class="label">Password</label>
-                                <input type="password" name="password" minlength="8" required/>
+                                <input type="password" name="password"/>
                             </fieldset>
                         </div>
                         <div class="col-12 mt-3">
-                            <a href="#" class="text_14 d-block">Forgot your password?</a>
-                            <button type="submit" class="btn-primary d-block mt-4 btn-signin">SIGN IN</button>
-                            <a href="{{route('customer.register')}}" class="btn-secondary mt-2 btn-signin">CREATE AN ACCOUNT</a>
+                            <button type="submit" class="btn-primary d-block mt-3 btn-signin">CREATE</button>
                         </div>
                     </div>
                 </form>

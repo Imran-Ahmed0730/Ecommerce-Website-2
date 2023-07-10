@@ -32,6 +32,11 @@
             </ul>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-danger text-center">{{session('message')}}</h4>
+        </div>
+    </div>
     <!-- breadcrumb end -->
 
     <main id="MainContent" class="content-for-layout">
@@ -54,32 +59,71 @@
                                         <div class="col-md-12">
                                             <form action="{{route('checkout.confirm-order')}}" method="post">
                                                 @csrf
-                                                <div class=" row mb-3">
-                                                    <div class="col-md-12">
-                                                        <label for="exampleInputPassword1" class="form-label">Full Name</label>
-                                                        <input type="text" name="name" class="form-control" placeholder="Your Full Name" required>
+                                                @if($customer)
+                                                    <div class=" row mb-3">
+                                                        <div class="col-md-12">
+                                                            <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                                                            <input type="text" name="name" class="form-control" value="{{$customer->name}}" required>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-md-6">
-                                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <input type="email" name="email" class="form-control" placeholder="Your Email Address" required>
+                                                    <div class="row mb-3">
+                                                        <div class="col-md-6">
+                                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="email" name="email" class="form-control" value="{{$customer->email}}" required>
+                                                                    @error('email')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="exampleInputEmail1" class="form-label">Contact No</label>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" name="mobile" class="form-control" value="{{$customer->mobile}}" required>
+                                                                    @error('email')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <label for="exampleInputEmail1" class="form-label">Contact No</label>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <input type="text" name="mobile" class="form-control" placeholder="Your Contact No" required>
+                                                @else
+                                                    <div class=" row mb-3">
+                                                        <div class="col-md-12">
+                                                            <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                                                            <input type="text" name="name" class="form-control" placeholder="Your Full Name" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-md-6">
+                                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="email" name="email" class="form-control" placeholder="Your Email Address" required>
+                                                                    @error('email')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="exampleInputEmail1" class="form-label">Contact No</label>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" name="mobile" class="form-control" placeholder="Your Contact No" required>
+                                                                    @error('email')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                                                     </div>
-                                                </div>
+                                                @endif
                                                 <div class=" row mb-3">
                                                     <div class="col-md-12">
                                                         <label for="exampleInputPassword1" class="form-label">Delivery Address</label>

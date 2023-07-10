@@ -52,14 +52,16 @@
                                         <path opacity="0.4" d="M1 0.5V8.5" stroke="#FEFEFE" stroke-linecap="round" />
                                     </svg>
                                 </span>
-                            <div class="text-white">
-                                <span>Dashboard</span>
+                            <div >
+                                <a href="{{route('customer.dashboard')}}">
+                                <span class="text-white">Dashboard</span>
+                                </a>
                             </div>
 
                         </div>
                     @else
                         <div class="announcement-meta d-flex align-items-center">
-                            <a class="announcement-login announcement-text text-white" href="login.html">
+                            <a class="announcement-login announcement-text text-white" href="{{route('customer.login')}}">
                                 <i class="bi bi-person"></i>
                                 <span>Login</span>
                             </a>
@@ -70,8 +72,10 @@
                                     </svg>
                                 </span>
                             <div class="text-white">
-                                <i class="bi bi-person-add"></i>
-                                <span>Register</span>
+                                <a class="announcement-login announcement-text text-white" href="{{route('customer.register')}}">
+                                    <i class="bi bi-person-add"></i>
+                                    <span>Register</span>
+                                </a>
                             </div>
                         </div>
                     @endif
