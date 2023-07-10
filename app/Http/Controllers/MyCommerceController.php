@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -29,4 +30,5 @@ class MyCommerceController extends Controller
             'products'=>Product::where('subcategory_id', $product->subcategory_id)->get()
         ]);
     }
+
 }

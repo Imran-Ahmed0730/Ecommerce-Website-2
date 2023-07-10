@@ -10,6 +10,8 @@ use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 
 Route::get('/',[MyCommerceController::class, 'index'])->name('home');
 Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCategoryProduct'])->name('category.show-all');
@@ -23,6 +25,13 @@ Route::get('cart/remove/{id}',[CartController::class, 'remove'])->name('cart.rem
 
 
 Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
+Route::post('checkout/confirm-order',[CheckoutController::class, 'confirmOrder'])->name('checkout.confirm-order');
+Route::get('checkout/confirm-order/success',[CheckoutController::class, 'success'])->name('checkout.confirm-order.success');
+
+Route::get('customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+Route::get('customer/login', [CustomerController::class, 'login'])->name('customer.login');
+Route::post('customer/login', [CustomerController::class, 'customerLogin'])->name('customer.login');
+Route::get('customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
 
 Route::middleware([
     'auth:sanctum',

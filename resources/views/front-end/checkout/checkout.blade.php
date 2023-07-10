@@ -40,162 +40,147 @@
                 <div class="checkout-page-wrapper">
                     <div class="row">
                         <div class="col-xl-9 col-lg-8 col-md-12 col-12">
-                            <div class="shipping-address-area">
-                                <h2 class="shipping-address-heading pb-1">Shipping address</h2>
-                                <div class="shipping-address-form-wrapper">
-                                    <form action="#" class="shipping-address-form common-form">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">First name</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Last name</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Email address</label>
-                                                    <input type="email" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Phone number</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Company</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Country</label>
-                                                    <select class="form-select">
-                                                        <option selected="ca">Canada</option>
-                                                        <option value="us">USA</option>
-                                                        <option value="au">Australia</option>
-                                                        <option value="me">Mexico</option>
-                                                    </select>
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">City</label>
-                                                    <select class="form-select">
-                                                        <option selected="ca">Toronto</option>
-                                                        <option value="us">Quebec</option>
-                                                        <option value="au">Windsor</option>
-                                                        <option value="me">Calgary</option>
-                                                    </select>
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Zip code</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Address 1</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-12">
-                                                <fieldset>
-                                                    <label class="label">Address 2</label>
-                                                    <input type="text" />
-                                                </fieldset>
-                                            </div>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-cash-tab" data-bs-toggle="pill" data-bs-target="#pills-cash" type="button" role="tab" aria-controls="pills-cash" aria-selected="true">Cash on Delivery</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-online-tab" data-bs-toggle="pill" data-bs-target="#pills-online" type="button" role="tab" aria-controls="pills-online" aria-selected="false">Online</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent" style="text-align: left">
+                                <div class="tab-pane fade show active" id="pills-cash" role="tabpanel" aria-labelledby="pills-cash-tab" tabindex="0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form action="{{route('checkout.confirm-order')}}" method="post">
+                                                @csrf
+                                                <div class=" row mb-3">
+                                                    <div class="col-md-12">
+                                                        <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                                                        <input type="text" name="name" class="form-control" placeholder="Your Full Name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <input type="email" name="email" class="form-control" placeholder="Your Email Address" required>
+                                                            </div>
+                                                        </div>
+                                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="exampleInputEmail1" class="form-label">Contact No</label>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <input type="text" name="mobile" class="form-control" placeholder="Your Contact No" required>
+                                                            </div>
+                                                        </div>
+                                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                    </div>
+                                                </div>
+                                                <div class=" row mb-3">
+                                                    <div class="col-md-12">
+                                                        <label for="exampleInputPassword1" class="form-label">Delivery Address</label>
+                                                        <textarea rows="5" name="delivery_address" class="form-control"  required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                            <label for="" class="form-label">Country <span class="form-text">[Optional]</span></label>
+                                                            <div class="col-md-12">
+                                                                <select name="" id="" class="form-control">
+                                                                    <option value="bd" selected>Bangladesh</option>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="row">
+                                                            <label for="" class="form-label">State <span class="form-text">[Optional]</span></label>
+                                                            <div class="col-md-12">
+                                                                <select name="" id="" class="form-control">
+                                                                    <option value="dhaka" selected>Dhaka</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <label class="form-check-label" for="exampleCheck1" >Zip Code <span class="form-text">[Optional]</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <label for="" class="form-label">Payment Method</label>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="payment_type" value="cash_on_delivery" class="form-check-input" checked>
+                                                        <label class="form-check-label" for="exampleCheck1" >Cash on Delivery</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row my-4">
+                                                    <div class="col-md-12">
+                                                        <input type="checkbox" class="form-check-input" checked>
+                                                        <label class="form-check-label" for="exampleCheck1" >I Accept the Term and Conditions</label>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Confirm Order</button>
+                                            </form>
                                         </div>
-
-                                    </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-online" role="tabpanel" aria-labelledby="pills-online-tab" tabindex="0">
+                                    Online
                                 </div>
                             </div>
 
-                            <div class="shipping-address-area billing-area">
-                                <h2 class="shipping-address-heading pb-1">Billing address</h2>
-                                <div class="form-checkbox d-flex align-items-center mt-4">
-                                    <input class="form-check-input mt-0" type="checkbox">
-                                    <label class="form-check-label ms-2">
-                                        Same as shipping address
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="shipping-address-area billing-area">
-                                <div class="minicart-btn-area d-flex align-items-center justify-content-between flex-wrap">
-                                    <a href="cart.html" class="checkout-page-btn minicart-btn btn-secondary">BACK TO CART</a>
-                                    <a href="checkout.html" class="checkout-page-btn minicart-btn btn-primary">PROCEED TO SHIPPING</a>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-12 col-12">
                             <div class="cart-total-area checkout-summary-area">
-                                <h3 class="d-none d-lg-block mb-0 text-center heading_24 mb-4">Order summary</h4>
-
+                                <h3 class="d-none d-lg-block mb-0 text-center heading_24 mb-4">Order summary</h3>
+                                @php $subTotal = 0 @endphp
+                                @foreach(ShoppingCart::all() as $product)
                                     <div class="minicart-item d-flex">
                                         <div class="mini-img-wrapper">
                                             <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/1.jpg" alt="img">
                                         </div>
                                         <div class="product-info">
-                                            <h2 class="product-title"><a href="#">Eliot Reversible Sectional</a></h2>
-                                            <p class="product-vendor">$150 x 1</p>
+                                            <h2 class="product-title"><a href="{{route('product.about-product', ['id'=>$product->id])}}">{{$product->name}}</a></h2>
+                                            <p class="product-vendor">{{$product->price}} x {{$product->qty}}</p>
                                         </div>
                                     </div>
-                                    <div class="minicart-item d-flex">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/2.jpg" alt="img">
-                                        </div>
-                                        <div class="product-info">
-                                            <h2 class="product-title"><a href="#">Eliot Reversible Sectional</a></h2>
-                                            <p class="product-vendor">$150 x 1</p>
-                                        </div>
-                                    </div>
-                                    <div class="minicart-item d-flex">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/3.jpg" alt="img">
-                                        </div>
-                                        <div class="product-info">
-                                            <h2 class="product-title"><a href="#">Eliot Reversible Sectional</a></h2>
-                                            <p class="product-vendor">$150 x 1</p>
-                                        </div>
-                                    </div>
-                                    <div class="minicart-item d-flex">
-                                        <div class="mini-img-wrapper">
-                                            <img class="mini-img" src="{{asset('/')}}/front-end/assets/img/products/furniture/4.jpg" alt="img">
-                                        </div>
-                                        <div class="product-info">
-                                            <h2 class="product-title"><a href="#">Eliot Reversible Sectional</a></h2>
-                                            <p class="product-vendor">$150 x 1</p>
-                                        </div>
-                                    </div>
+                                    @php $subTotal += ($product->price*$product->qty) @endphp
+                                @endforeach
+
 
                                     <div class="cart-total-box mt-4 bg-transparent p-0">
                                         <div class="subtotal-item subtotal-box">
-                                            <h4 class="subtotal-title">Subtotals:</h4>
-                                            <p class="subtotal-value">$465.00</p>
+                                            <h4 class="subtotal-title">Subtotal:</h4>
+                                            <p class="subtotal-value">{{$subTotal}}</p>
                                         </div>
                                         <div class="subtotal-item shipping-box">
                                             <h4 class="subtotal-title">Shipping:</h4>
-                                            <p class="subtotal-value">$10.00</p>
+                                            <p class="subtotal-value">{{count(ShoppingCart::all()) == 0 ? $shipping=0:$shipping=100}}</p>
                                         </div>
                                         <div class="subtotal-item discount-box">
-                                            <h4 class="subtotal-title">Discount:</h4>
-                                            <p class="subtotal-value">$100.00</p>
+                                            <h4 class="subtotal-title">Tax:</h4>
+                                            <p class="subtotal-value">{{$tax = round($subTotal* 0.15)}}</p>
                                         </div>
                                         <hr />
                                         <div class="subtotal-item discount-box">
                                             <h4 class="subtotal-title">Total:</h4>
-                                            <p class="subtotal-value">$1000.00</p>
+                                            <p class="subtotal-value">{{$order_total = $tax+$subTotal+$shipping}}</p>
                                         </div>
+
+                                        @php
+                                        Session::put('order_total', $order_total);
+                                        Session::put('tax_total', $tax);
+                                        Session::put('shipping_total', $shipping);
+                                        @endphp
 
 
                                         <div class="mt-4 checkout-promo-code">
