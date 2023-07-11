@@ -25,7 +25,7 @@
     <!-- breadcrumb end -->
 
     <main id="MainContent" class="content-for-layout">
-        <div class="login-page mt-100">
+        <div class="login-page mt-3">
             <div class="container">
                 <form action="{{route('customer.login')}}" method="post" class="login-form common-form mx-auto">
                     @csrf

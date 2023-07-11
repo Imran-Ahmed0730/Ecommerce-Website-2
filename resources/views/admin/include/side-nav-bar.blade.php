@@ -152,6 +152,137 @@
                         </li>
                     </ul>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+                  <span class="d-flex">
+                    <i class="ti ti-file-text"></i>
+                  </span>
+                        <span class="hide-menu">Order Module</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{route('order.add')}}" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                </div>
+                                <span class="hide-menu">Add Order</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('order.manage')}}" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                </div>
+                                <span class="hide-menu">Manage Order</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">--}}
+{{--                  <span class="d-flex">--}}
+{{--                    <i class="ti ti-file-text"></i>--}}
+{{--                  </span>--}}
+{{--                        <span class="hide-menu">Customer Module</span>--}}
+{{--                    </a>--}}
+{{--                    <ul aria-expanded="false" class="collapse first-level">--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('customer.add')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Add Customer</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('customer.manage')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Manage Customer</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">--}}
+{{--                  <span class="d-flex">--}}
+{{--                    <i class="ti ti-file-text"></i>--}}
+{{--                  </span>--}}
+{{--                        <span class="hide-menu">User Module</span>--}}
+{{--                    </a>--}}
+{{--                    <ul aria-expanded="false" class="collapse first-level">--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('user.add')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Add User</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('user.manage')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Manage User</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">--}}
+{{--                  <span class="d-flex">--}}
+{{--                    <i class="ti ti-file-text"></i>--}}
+{{--                  </span>--}}
+{{--                        <span class="hide-menu">Coupon Module</span>--}}
+{{--                    </a>--}}
+{{--                    <ul aria-expanded="false" class="collapse first-level">--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('coupon.add')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Add Coupon</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('coupon.manage')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Manage Coupon</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--                <li class="sidebar-item">--}}
+{{--                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">--}}
+{{--                  <span class="d-flex">--}}
+{{--                    <i class="ti ti-file-text"></i>--}}
+{{--                  </span>--}}
+{{--                        <span class="hide-menu">Setting Module</span>--}}
+{{--                    </a>--}}
+{{--                    <ul aria-expanded="false" class="collapse first-level">--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('coupon.add')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Add Coupon</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="sidebar-item">--}}
+{{--                            <a href="{{route('coupon.manage')}}" class="sidebar-link">--}}
+{{--                                <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                    <i class="ti ti-circle"></i>--}}
+{{--                                </div>--}}
+{{--                                <span class="hide-menu">Manage Coupon</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

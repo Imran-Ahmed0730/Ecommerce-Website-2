@@ -17,7 +17,12 @@ class CustomerController extends Controller
     }
 
     public function login(){
-        return view('front-end.customer.login');
+        if (Session::get('customerId')){
+            return back()->with('message', 'You are Already Logged In!!');
+        }
+        else{
+            return view('front-end.customer.login');
+        }
     }
 
     public function customerValidate($request){
@@ -64,5 +69,22 @@ class CustomerController extends Controller
         Session::forget('customerId');
 
         return redirect('/');
+    }
+
+    public function profile(){
+        return view('front-end.customer.profile',[
+            'customer'=>Customer::find(Session::get('customerId'))
+        ]);
+    }
+    public function account(){
+        return view('front-end.customer.account');
+    }
+    public function orders(){
+        return view('front-end.customer.orders', [
+            'orders'=>Order::orderBy('id', 'desc')->get()
+        ]);
+    }
+    public function changePassword(){
+        return view('front-end.customer.change-password');
     }
 }

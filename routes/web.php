@@ -13,6 +13,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\AdminOrderController;
 
 Route::get('/',[MyCommerceController::class, 'index'])->name('home');
 Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCategoryProduct'])->name('category.show-all');
@@ -29,12 +30,6 @@ Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
 Route::post('checkout/confirm-order',[CheckoutController::class, 'confirmOrder'])->name('checkout.confirm-order');
 Route::get('checkout/confirm-order/complete',[CheckoutController::class, 'success'])->name('checkout.confirm-order.success');
 
-Route::get('customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
-Route::get('customer/login', [CustomerController::class, 'login'])->name('customer.login');
-Route::post('customer/login', [CustomerController::class, 'customerLogin'])->name('customer.login');
-Route::get('customer/register', [CustomerController::class, 'register'])->name('customer.register');
-Route::post('customer/register', [CustomerController::class, 'customerRegister'])->name('customer.register');
-Route::get('customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
 
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
@@ -50,6 +45,27 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
+//Customer Section
+Route::get('customer/login', [CustomerController::class, 'login'])->name('customer.login');
+Route::post('customer/login', [CustomerController::class, 'customerLogin'])->name('customer.login');
+Route::get('customer/register', [CustomerController::class, 'register'])->name('customer.register');
+Route::post('customer/register', [CustomerController::class, 'customerRegister'])->name('customer.register');
+Route::get('customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
+
+//Customer Middleware
+
+
+Route::middleware([
+    'customer'
+])->group(function () {
+    Route::get('customer/dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+    Route::get('customer/profile', [CustomerController::class, 'profile'])->name('customer.profile');
+    Route::get('customer/account', [CustomerController::class, 'account'])->name('customer.account');
+    Route::get('customer/account/change-password', [CustomerController::class, 'changePassword'])->name('customer.account.change-password');
+    Route::get('customer/orders', [CustomerController::class, 'orders'])->name('customer.orders');
+});
+
+//Admin Middleware
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -98,5 +114,16 @@ Route::middleware([
     Route::get('product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
     Route::post('product/update', [ProductController::class, 'update'])->name('product.update');
     Route::post('product/delete', [ProductController::class, 'remove'])->name('product.delete');
+
+    //Order Controller
+    Route::get('order/add', [AdminOrderController::class, 'index'])->name('order.add');
+    Route::post('order/new', [AdminOrderController::class, 'store'])->name('order.new');
+    Route::get('order/manage', [AdminOrderController::class, 'manage'])->name('order.manage');
+    Route::get('order/details/{id}', [AdminOrderController::class, 'details'])->name('order.details');
+    Route::get('order/edit/{id}', [AdminOrderController::class, 'edit'])->name('order.edit');
+    Route::get('order/invoice/view/{id}', [AdminOrderController::class, 'edit'])->name('order.invoice.view');
+    Route::get('order/invoice/print/{id}', [AdminOrderController::class, 'edit'])->name('order.invoice.print');
+    Route::post('order/update', [AdminOrderController::class, 'update'])->name('order.update');
+    Route::post('order/delete', [AdminOrderController::class, 'remove'])->name('order.delete');
 
 });
