@@ -21,6 +21,7 @@ class Product extends Model
 
         if(Product::find($request->id)){
             self::$product = Product::find($request->id);
+            self::$product->featured_status = $request->featured_status;
         }
         else{
             self::$product = new Product();

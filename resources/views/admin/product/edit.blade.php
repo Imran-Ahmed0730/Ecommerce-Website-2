@@ -147,6 +147,22 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Featured Status</label>
+                                <div class="form-check">
+                                    <input type="radio" name="featured_status" value="1" class="form-check-input" {{$product->featured_status == 1 ? 'checked': ' '}}>
+                                    <label class="form-check-label" for="exampleCheck2" >Featured</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="featured_status" value="0" class="form-check-input" {{$product->featured_status == 0 ? 'checked': ' '}}>
+                                    <label class="form-check-label" for="exampleCheck2" >Not Featured</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="control-label">Status</label>

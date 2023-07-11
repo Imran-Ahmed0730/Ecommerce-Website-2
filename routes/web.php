@@ -30,6 +30,8 @@ Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
 Route::post('checkout/confirm-order',[CheckoutController::class, 'confirmOrder'])->name('checkout.confirm-order');
 Route::get('checkout/confirm-order/complete',[CheckoutController::class, 'success'])->name('checkout.confirm-order.success');
 
+Route::get('about-us', [MyCommerceController::class, 'aboutUs'])->name('about-us');
+Route::get('contact-us', [MyCommerceController::class, 'contactUs'])->name('contact-us');
 
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);

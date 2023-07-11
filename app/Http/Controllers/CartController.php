@@ -8,7 +8,7 @@ use ShoppingCart;
 
 class CartController extends Controller
 {
-    private $product;
+    private $product, $qty;
     public function index(){
 //        return ShoppingCart::all();
         return view('front-end.cart.cart', [
@@ -17,11 +17,17 @@ class CartController extends Controller
     }
     public function addToCart(Request $request, $id){
 //        return $request;
+        if ($request->qty){
+            $this->qty = $request->qty;
+        }
+        else{
+            $this->qty = 1;
+        }
         $this->product = Product::find($id);
         ShoppingCart::add(
             $this->product->id,
             $this->product->name,
-            $request->qty,
+            $this->qty,
             $this->product->selling_price,
             [
                 'image'=>$this->product->image,

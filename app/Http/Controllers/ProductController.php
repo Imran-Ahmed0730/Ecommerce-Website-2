@@ -53,6 +53,7 @@ class ProductController extends Controller
     }
 
     public function update(Request $request){
+//        return $request;
         $this->product= Product::store($request);
         OtherImage::updateImage($request->other_image, $this->product->id, $this->product->name);
         return redirect('/product/manage')->with('message', 'Product Info Updated Successfully');

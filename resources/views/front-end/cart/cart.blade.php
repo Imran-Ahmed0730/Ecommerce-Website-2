@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="subtotal-item shipping-box">
                                             <h4 class="subtotal-title">Shipping:</h4>
-                                            <p class="subtotal-value">{{$products ? $shipping=0:$shipping=100}}</p>
+                                            <p class="subtotal-value">{{count($products) ==0 ? $shipping=0:$shipping=100}}</p>
                                         </div>
                                         <div class="subtotal-item discount-box">
                                             <h4 class="subtotal-title">Tax (15%):</h4><br>

@@ -46,10 +46,11 @@
                         <form class="product-form" action="{{route('cart.add', ['id'=>$product->id])}}" method="post">
                             @csrf
                         <div class="misc d-flex align-items-end justify-content-between mt-4">
-                            <div class="quantity d-flex align-items-center justify-content-between">
-                                <button class="qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg" alt="minus"></button>
-                                <input class="qty-input" type="number" name="qty" value="1" min="1" max="{{$product->stock_amount}}">
-                                <button class="qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg" alt="plus"></button>
+
+                            <div class="d-flex align-items-center justify-content-between">
+{{--                                <input class=" btn qty-btn dec-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/minus.svg" alt="minus"></input>--}}
+                                Quantity: <input class="form-control mx-2" type="number" name="qty" value="1" min="1" max="{{$product->stock_amount}}">
+{{--                                <input class="btn qty-btn inc-qty"><img src="{{asset('/')}}/front-end/assets/img/icon/plus.svg" alt="plus"></input>--}}
                             </div>
                         </div>
 
@@ -117,17 +118,20 @@
                         <div class="new-item" data-aos="fade-up" data-aos-duration="300">
                             <div class="product-card">
                                 <div class="product-card-img">
-                                    <a class="hover-switch" href="collection-left-sidebar.html">
-                                        <img class="secondary-img" src="{{asset('/')}}/front-end/assets/img/products/bags/11.jpg"
+                                    <a class="hover-switch" href="{{route('product.about-product', ['id'=>$product->id])}}">
+                                        <img class="secondary-img" src="{{asset($product->image)}}"
                                              alt="product-img">
-                                        <img class="primary-img" src="{{asset('/')}}/front-end/assets/img/products/bags/1.jpg"
+                                        <img class="primary-img" src="{{asset($product->image)}}"
                                              alt="product-img">
                                     </a>
 
                                     <div class="product-card-action product-card-action-2">
-                                        <a href="#quickview-modal" class="quickview-btn btn-primary"
-                                           data-bs-toggle="modal">QUICKVIEW</a>
-                                        <a href="#" class="addtocart-btn btn-primary">ADD TO CART</a>
+                                        <a href="{{route('product.about-product', ['id'=>$product->id])}}" class="quickview-btn btn-primary"
+                                           >QUICKVIEW</a>
+                                        <a href="" onclick="event.preventDefault(); document.getElementById('addToCartForm').submit()" class="addtocart-btn btn-primary">ADD TO CART</a>
+                                        <form action="{{route('cart.add', ['id'=>$product->id])}}" id="addToCartForm" method="post">
+                                            @csrf
+                                        </form>
                                     </div>
 
                                     <a href="wishlist.html" class="wishlist-btn card-wishlist">
@@ -139,12 +143,12 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div class="product-card-details text-center">
-                                    <h3 class="product-card-title"><a href="collection-left-sidebar.html">black backpack</a>
+                                <div class="product-card-details">
+                                    <h3 class="product-card-title"><a href="collection-left-sidebar.html">{{$product->name}}</a>
                                     </h3>
                                     <div class="product-card-price">
-                                        <span class="card-price-regular">$1529</span>
-                                        <span class="card-price-compare text-decoration-line-through">$1759</span>
+                                        <span class="card-price-regular">{{$product->selling_price}} TK</span>
+                                        <span class="card-price-compare text-decoration-line-through">{{$product->regular_price}} TK</span>
                                     </div>
                                 </div>
                             </div>

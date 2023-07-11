@@ -6,16 +6,48 @@
     <div class="container mt-5" align="left">
         <main>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="list-group">
-                        <a href="{{route('customer.dashboard')}}" class="list-group-item list-group-item-action active" aria-current="true">
-                            Dashboard
-                        </a>
-                        <a href="{{route('customer.profile')}}" class="list-group-item list-group-item-action">Profile</a>
-                        <a href="{{route('customer.orders')}}" class="list-group-item list-group-item-action">Order</a>
-                        <a href="{{route('customer.account')}}" class="list-group-item list-group-item-action">Account</a>
-                        <a href="{{route('customer.account.change-password')}}" class="list-group-item list-group-item-action">Change Password</a>
-                        <a href="{{route('customer.logout')}}" class="list-group-item list-group-item-action">Logout</a>
+                <div class="col-lg-4 col-md-12 col-12">
+                    <div class="collection-filter filter-drawer">
+                        <div class="filter-widget d-lg-none d-flex align-items-center justify-content-between">
+                            <h4 class="heading_24">Filter By</h4>
+                            <button type="button" class="btn-close text-reset filter-drawer-trigger d-lg-none"></button>
+                        </div>
+
+                        <div class="filter-widget">
+                            <a href="{{route('customer.dashboard')}}">
+                                <div class="filter-header faq-heading heading_18 d-flex align-items-center justify-content-between border-bottom">
+                                    Dashboard
+                                </div>
+                            </a>
+                        </div>
+                        <div class="filter-widget">
+                            <a href="{{route('customer.profile')}}">
+                                <div class="filter-header faq-heading heading_18 d-flex align-items-center justify-content-between border-bottom">
+                                    My Profile
+                                </div>
+                            </a>
+                        </div>
+                        <div class="filter-widget">
+                            <a href="{{route('customer.orders')}}">
+                                <div class="filter-header faq-heading heading_18 d-flex align-items-center justify-content-between border-bottom">
+                                    Orders
+                                </div>
+                            </a>
+                        </div>
+                        <div class="filter-widget">
+                            <a href="{{route('customer.account')}}">
+                                <div class="filter-header faq-heading heading_18 d-flex align-items-center justify-content-between border-bottom">
+                                    My Account
+                                </div>
+                            </a>
+                        </div>
+                        <div class="filter-widget">
+                            <a href="{{route('customer.account.change-password')}}">
+                                <div class="filter-header faq-heading heading_18 d-flex align-items-center justify-content-between border-bottom">
+                                    Change Password
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-8">
