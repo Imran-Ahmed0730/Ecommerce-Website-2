@@ -24,4 +24,8 @@ class OrderDetail extends Model
             ShoppingCart::remove($order->__raw_id);
         }
     }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
 }

@@ -53,8 +53,7 @@
                                                 </div>
 
                                                 <div class="product-card-action product-card-action-2 justify-content-center">
-                                                    <a href="{{route('product.details', ['id'=>$product->id])}}" class="action-card action-quickview"
-                                                       data-bs-toggle="modal">
+                                                    <a href="{{route('product.details', ['id'=>$product->id])}}" class="action-card action-quickview">
                                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                                              xmlns="http://www.w3.org/2000/svg">
                                                             <path
@@ -73,7 +72,7 @@
                                                         </svg>
                                                     </a>
 
-                                                    <a href="{{route('cart.add', ['id'=> $product->id])}}" class="action-card action-addtocart">
+                                                    <a href="" onclick="event.preventDefault(); document.getElementById('addToCartForm').submit()" class="action-card action-addtocart">
                                                         <svg class="icon icon-cart" width="24" height="26"
                                                              viewBox="0 0 24 26" fill="none"
                                                              xmlns="http://www.w3.org/2000/svg">
@@ -82,11 +81,14 @@
                                                                 fill="#00234D" />
                                                         </svg>
                                                     </a>
+                                                    <form action="{{route('cart.add', ['id'=> $product->id])}}" id="addToCartForm" method="post">
+                                                        @csrf
+                                                    </form>
                                                 </div>
                                             </div>
                                             <div class="product-card-details">
                                                 <h3 class="product-card-title">
-                                                    <a href="collection-left-sidebar.html">{{$product->name}}</a>
+                                                    <a href="{{route('product.about-product', ['id'=>$product->id])}}">{{$product->name}}</a>
                                                 </h3>
                                                 <div class="product-card-price">
                                                     <span class="card-price-regular">{{$product->selling_price}} TK</span>

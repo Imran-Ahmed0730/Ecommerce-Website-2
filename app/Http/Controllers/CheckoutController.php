@@ -51,6 +51,7 @@ class CheckoutController extends Controller
     }
 
     public function success(){
+        return Session::get('customerName');
         return view('front-end.checkout.success-order');
     }
 

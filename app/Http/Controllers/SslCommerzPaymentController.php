@@ -35,7 +35,8 @@ class SslCommerzPaymentController extends Controller
         if (Session::get('order_total')) {
             if (Session::get('customerId')) {
                 $this->customer = Customer::find(Session::get('customerId'));
-            } else {
+            }
+            else {
                 $this->validate($request, [
                     'email' => 'unique:customers,email',
                     'mobile' => 'unique:customers,mobile'
