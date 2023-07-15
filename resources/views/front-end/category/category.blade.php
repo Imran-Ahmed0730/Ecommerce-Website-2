@@ -41,7 +41,7 @@
                                     <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-duration="700" align="left">
                                         <div class="product-card">
                                             <div class="product-card-img">
-                                                <a class="hover-switch" href="collection-left-sidebar.html">
+                                                <a class="hover-switch" href="{{route('product.about-product', ['id'=>$product->id])}}">
                                                     <img class="secondary-img" src="{{asset($product->image)}}"
                                                          alt="product-img">
                                                     <img class="primary-img" src="{{asset($product->image)}}"
@@ -53,8 +53,7 @@
                                                 </div>
 
                                                 <div class="product-card-action product-card-action-2 justify-content-center">
-                                                    <a href="{{route('product.details', ['id'=>$product->id])}}" class="action-card action-quickview"
-                                                       data-bs-toggle="modal">
+                                                    <a href="{{route('product.about-product', ['id'=>$product->id])}}" class="action-card action-quickview">
                                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                                              xmlns="http://www.w3.org/2000/svg">
                                                             <path

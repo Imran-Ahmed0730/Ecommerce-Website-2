@@ -24,6 +24,7 @@
                             name="name"
                             placeholder="Brand Name"
                             id="example-text-input"
+                            required
                         />
                     </div>
                 </div>
@@ -31,7 +32,7 @@
                     <label
                         for="example-text-input"
                         class="col-md-2 col-form-label"
-                    >Description</label
+                    >Description <small>[Optional]</small></label
                     >
                     <div class="col-md-10">
                         <textarea class="form-control" name="description" rows="5" placeholder="Description About Brand"></textarea>
@@ -42,7 +43,7 @@
                     <label
                         for="example-text-input"
                         class="col-md-2 col-form-label"
-                    >Brand Image</label
+                    >Brand Image<small>[Optional]</small></label
                     >
                     <div class="col-md-10">
                         <input

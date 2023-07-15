@@ -4,7 +4,6 @@
 @endsection
 @section('content')
     <div class="breadcrumb">
-        <h3 class="text-center text-success">{{session('message')}}</h3>
         <div class="container">
             <ul class="list-unstyled d-flex align-items-center m-0">
                 <li><a href="{{route('home')}}">Home</a></li>
@@ -25,8 +24,9 @@
     <!-- breadcrumb end -->
 
     <main id="MainContent" class="content-for-layout">
-        <div class="cart-page mt-100">
+        <div class="cart-page">
             <div class="container">
+                <h2 class="text-center text-success mb-10">{{session('message')}}</h2>
                 <div class="cart-page-wrapper">
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-12">
@@ -62,23 +62,26 @@
                                         <td class="cart-item-details">
                                             <p class="product-vendor">{{$product->price}}</p>
                                         </td>
-                                        <form action="{{route('cart.update-quantity', ['id'=>$product->__raw_id])}}" method="post">
-                                            @csrf
+
                                             <td class="cart-item-quantity">
-                                                <div class="quantity d-flex align-items-center justify-content-between">
+                                                <form action="{{route('cart.update-quantity', ['id'=>$product->__raw_id])}}" method="post">
+                                                    @csrf
+                                                <div class="quantity d-flex align-items-center justify-content-between btn-group" style="border: none !important">
                                                     <input class="form-control" type="number" name="qty" value="{{$product->qty}}" min="1">
+                                                    <button type="submit" class="btn btn-secondary"><i class="bi bi-arrow-left-right fs-0"></i></button>
                                                 </div>
+                                                </form>
                                             </td>
                                             <td class="cart-item-price">
                                                 <div class="product-price">{{$product->total}}</div>
                                                 @php $total += $product->total @endphp
                                             </td>
+
                                             <td>
-                                                <button type="submit" class="btn btn-secondary"><i class="bi bi-arrow-left-right"></i></button>
-                                                <a href="{{route('cart.remove', ['id'=>$product->__raw_id])}}" class="btn btn-outline-danger"
-                                                onclick="confirm('Please Confirm Before Continuing!!')"><i class="bi bi-x-lg"></i></a>
+                                                <a href="{{route('cart.remove', ['id'=>$product->__raw_id])}}" onclick="return confirm('Please Confirm Before Removing the Product from Cart!!')" class="btn btn-outline-danger"
+                                                ><i class="bi bi-x"></i></a>
                                             </td>
-                                        </form>
+
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -86,7 +89,7 @@
                         </div>
                         <div class="col-lg-4 col-md-12 col-12">
                             <div class="cart-total-area">
-                                <h3 class="cart-total-title d-none d-lg-block mb-0">Cart Totals</h4>
+                                <h4 class="cart-total-title d-none d-lg-block mb-0">Cart Totals</h4>
                                     <div class="cart-total-box mt-4">
                                         <div class="subtotal-item subtotal-box">
                                             <h4 class="subtotal-title">Subtotals:</h4>
@@ -98,7 +101,7 @@
                                         </div>
                                         <div class="subtotal-item discount-box">
                                             <h4 class="subtotal-title">Tax (15%):</h4><br>
-                                            <p class="subtotal-value">{{$tax = round( $total+ $total*0.15)}}</p>
+                                            <p class="subtotal-value">{{$tax = round($total*0.15)}}</p>
                                         </div>
                                         <hr />
                                         <div class="subtotal-item discount-box">

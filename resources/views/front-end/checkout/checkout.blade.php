@@ -154,7 +154,7 @@
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <label class="form-check-label" for="exampleCheck1" >Zip Code <span class="form-text">[Optional]</label>
+                                                        <label class="form-check-label" for="exampleCheck1" >Zip Code <span class="form-text">[Optional]</span></label>
                                                         <input type="text" class="form-control">
                                                     </div>
 

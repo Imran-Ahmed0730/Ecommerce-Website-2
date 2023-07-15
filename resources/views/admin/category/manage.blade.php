@@ -68,7 +68,7 @@
                                         <form action="{{route('category.delete')}}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$category->id}}">
-                                            <button type="submit" class="btn btn-outline-danger mx-2" onclick="confirm('Please Confirm Before Deleting it!!')">
+                                            <button type="submit" class="btn btn-outline-danger mx-2" onclick="return confirm('Please Confirm Before Deleting it!!')">
                                                 <i class="bi bi-trash-fill"></i></button>
                                         </form>
                                     </div>

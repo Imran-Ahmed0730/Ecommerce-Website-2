@@ -15,7 +15,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="control-label">Category Name</label>
-                                <select name="category_id" id="CategoryId" class="form-control form-select">
+                                <select name="category_id" id="CategoryId" class="form-control form-select" required>
                                     <option selected>--Select A Category--</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
@@ -27,7 +27,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="control-label">Sub-Category Name</label>
-                                <select name="subcategory_id" id="SubCategoryId" class="form-control form-select">
+                                <select name="subcategory_id" id="SubCategoryId" class="form-control form-select" required>
                                     <option selected>--Select Sub-Category--</option>
                                     @foreach($subcategories as $subcategory)
                                         <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
@@ -42,7 +42,7 @@
                         <div class="col-md-6">
                             <div class="mb-3 has-success">
                                 <label class="control-label">Brand Name</label>
-                                <select name="brand_id" class="form-control custom-select">
+                                <select name="brand_id" class="form-control custom-select" required>
                                     <option selected>--Select Brand--</option>
                                     @foreach($brands as $brand)
                                         <option value="{{$brand->id}}">{{$brand->name}}</option>
@@ -54,7 +54,7 @@
                         <div class="col-md-6">
                             <div class="mb-3 has-success">
                                 <label class="control-label">Unit Type</label>
-                                <select name="unit_id" class="form-control custom-select">
+                                <select name="unit_id" class="form-control custom-select" required>
                                     <option selected>--Select Unit--</option>
                                     @foreach($units as $unit)
                                         <option value="{{$unit->id}}">{{$unit->name}}</option>
@@ -70,13 +70,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="control-label">Product Name</label>
-                                <input type="text" name="name" placeholder="Product Name" class="form-control">
+                                <input type="text" name="name" placeholder="Product Name" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="control-label">Product Code</label>
-                                <input type="text" name="code" placeholder="Product Code" class="form-control">
+                                <input type="text" name="code" placeholder="Product Code" class="form-control" required>
                             </div>
                         </div>
 {{--                        <!--/span-->--}}
@@ -86,13 +86,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="control-label">Product Model</label>
-                                <input type="text" name="model" placeholder="Product Model" class="form-control">
+                                <input type="text" name="model" placeholder="Product Model" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="control-label">Stock Amount</label>
-                                <input type="number" name="stock_amount" placeholder="Stock Amount" class="form-control">
+                                <input type="number" name="stock_amount" placeholder="Stock Amount" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -105,8 +105,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="control-label">Stock Amount</label>
-                                <input type="number" name="selling_price" placeholder="Selling Price" class="form-control">
+                                <label class="control-label">Selling Price</label>
+                                <input type="number" name="selling_price" placeholder="Selling Price" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label class="control-label">Long Description</label>
+                                <label class="control-label">Long Description <small>[Optional]</small></label>
                                 <textarea name="long_description" placeholder="Short Description" rows="8" id="summernote" class="form-control"></textarea>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="control-label">Feature Image</label>
-                                <input type="file" name="image" class="form-control">
+                                <input type="file" name="image" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label class="control-label">Other Images</label>
-                                <input type="file" name="other_image[]" class="form-control" multiple>
+                                <input type="file" name="other_image[]" class="form-control" multiple required>
                             </div>
                         </div>
                     </div>

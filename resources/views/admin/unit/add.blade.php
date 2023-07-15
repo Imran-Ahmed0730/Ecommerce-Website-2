@@ -24,6 +24,7 @@
                             name="name"
                             placeholder="Unit Name"
                             id="example-text-input"
+                            required
                         />
                     </div>
                 </div>
@@ -31,7 +32,7 @@
                     <label
                         for="example-text-input"
                         class="col-md-2 col-form-label"
-                    >Description</label
+                    >Description <small>[Optional]</small></label
                     >
                     <div class="col-md-10">
                         <textarea class="form-control" name="description" rows="5" placeholder="Description About Unit"></textarea>
@@ -49,6 +50,7 @@
                             class="form-control"
                             type="text"
                             name="code"
+                            required
                         />
                     </div>
                 </div>

@@ -24,6 +24,7 @@
                             name="name"
                             placeholder="Sub-Category Name"
                             id="example-text-input"
+                            required
                         />
                     </div>
                 </div>
@@ -34,7 +35,7 @@
                         >Category Name</label
                         >
                         <div class="col-md-10">
-                            <select name="category_id" class="form-control">
+                            <select name="category_id" class="form-control" required>
                                 <option disabled selected>Choose a Category Type </option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
@@ -47,7 +48,7 @@
                     <label
                         for="example-text-input"
                         class="col-md-2 col-form-label"
-                    >Description</label
+                    >Description <small>[Optional]</small></label
                     >
                     <div class="col-md-10">
                         <textarea class="form-control" name="description" rows="5" placeholder="Description About Category"></textarea>
@@ -58,7 +59,7 @@
                     <label
                         for="example-text-input"
                         class="col-md-2 col-form-label"
-                    >Sub-Category Image</label
+                    >Sub-Category Image <small>[Optional]</small></label
                     >
                     <div class="col-md-10">
                         <input

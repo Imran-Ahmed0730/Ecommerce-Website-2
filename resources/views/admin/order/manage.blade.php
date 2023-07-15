@@ -73,7 +73,7 @@
                                         <form action="{{route('order.delete')}}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$order->id}}" title="Delete Order">
-                                            <button type="submit" class="btn btn-danger" onclick="confirm('Please Confirm Before Deleting it!!')" style="padding: 8px 2px;">
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Please Confirm Before Deleting it!!')" style="padding: 8px 2px;">
                                                 <i class="bi bi-trash-fill" style="padding: 7px;"></i></button>
                                         </form>
                                     </div>

@@ -16,7 +16,7 @@ class CartController extends Controller
         ]);
     }
     public function addToCart(Request $request, $id){
-//        return $request;
+//        return $id;
         if ($request->qty){
             $this->qty = $request->qty;
         }

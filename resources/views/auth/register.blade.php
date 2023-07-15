@@ -45,7 +45,7 @@
                             <h2 class="mb-3 fs-7 fw-bolder">Welcome to Modernize</h2>
                             <p class=" mb-9">Register to Admin Dashboard</p>
 
-                            <form action="{{route('register')}}" method="post">
+                            <form action="{{route('register')}}" onsubmit="return validateUser()" method="post">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -56,8 +56,12 @@
                                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label">Code</label>
+                                    <input type="password" class="form-control" name="" id="code" min="3">
+                                </div>
+                                <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                                    <input type="password" class="form-control" name="password" min="8" id="exampleInputPassword1">
                                 </div>
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
@@ -77,7 +81,17 @@
 
     </div>
 </div>
-
+<script !src="">
+    function validateUser() {
+        var code = document.getElementById("code").value;
+        if (code != "567") {
+            alert("The code you entered is incorrect.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
 <!--  Import Js Files -->
 <script src="{{asset('admin')}}/dist/libs/jquery/dist/jquery.min.js"></script>
 <script src="{{asset('admin')}}/dist/libs/simplebar/dist/simplebar.min.js"></script>

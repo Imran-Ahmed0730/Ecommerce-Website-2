@@ -53,7 +53,7 @@
                                                 </div>
 
                                                 <div class="product-card-action product-card-action-2 justify-content-center">
-                                                    <a href="{{route('product.details', ['id'=>$product->id])}}" class="action-card action-quickview">
+                                                    <a href="{{route('product.about-product', ['id'=>$product->id])}}" class="action-card action-quickview">
                                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                                              xmlns="http://www.w3.org/2000/svg">
                                                             <path
@@ -81,7 +81,7 @@
                                                                 fill="#00234D" />
                                                         </svg>
                                                     </a>
-                                                    <form action="{{route('cart.add', ['id'=> $product->id])}}" id="addToCartForm" method="post">
+                                                    <form action="{{route('cart.add', ['id'=>$product->id])}}" id="addToCartForm" method="post">
                                                         @csrf
                                                     </form>
                                                 </div>

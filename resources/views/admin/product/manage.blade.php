@@ -87,7 +87,7 @@
                                             <form action="{{route('product.delete')}}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{$product->id}}">
-                                                <button type="submit" class="btn btn-outline-danger" onclick="confirm('Please Confirm Before Deleting it!!')">
+                                                <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Please Confirm Before Deleting it!!')">
                                                     <i class="bi bi-trash-fill"></i></button>
                                             </form>
                                         </div>
