@@ -20,12 +20,13 @@ Route::get('category/products/all/{id}',[MyCommerceController::class, 'getAllCat
 Route::get('subcategory/product/all/{id}',[MyCommerceController::class, 'getAllSubCategoryProduct'])->name('subcategory.show-all');
 Route::get('product/about-product/{id}',[MyCommerceController::class, 'details'])->name('product.about-product');
 
+//cart section
 Route::get('cart/show',[CartController::class, 'index'])->name('cart.show');
 Route::post('cart/add/{id}',[CartController::class, 'addToCart'])->name('cart.add');
 Route::post('cart/update-quantity/{id}',[CartController::class, 'updateQty'])->name('cart.update-quantity');
 Route::get('cart/remove/{id}',[CartController::class, 'remove'])->name('cart.remove');
 
-
+//checkout seciton
 Route::get('checkout',[CheckoutController::class, 'index'])->name('checkout');
 Route::post('checkout/confirm-order',[CheckoutController::class, 'confirmOrder'])->name('checkout.confirm-order');
 Route::get('checkout/confirm-order/complete',[CheckoutController::class, 'success'])->name('checkout.confirm-order.success');
@@ -123,8 +124,8 @@ Route::middleware([
     Route::get('order/manage', [AdminOrderController::class, 'manage'])->name('order.manage');
     Route::get('order/details/{id}', [AdminOrderController::class, 'details'])->name('order.details');
     Route::get('order/edit/{id}', [AdminOrderController::class, 'edit'])->name('order.edit');
-    Route::get('order/invoice/view/{id}', [AdminOrderController::class, 'edit'])->name('order.invoice.view');
-    Route::get('order/invoice/print/{id}', [AdminOrderController::class, 'edit'])->name('order.invoice.print');
+    Route::get('order/invoice/view/{id}', [AdminOrderController::class, 'showInvoice'])->name('order.invoice.view');
+    Route::get('order/invoice/print/{id}', [AdminOrderController::class, 'printInvoice'])->name('order.invoice.print');
     Route::post('order/update', [AdminOrderController::class, 'update'])->name('order.update');
     Route::post('order/delete', [AdminOrderController::class, 'remove'])->name('order.delete');
 

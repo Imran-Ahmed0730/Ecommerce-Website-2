@@ -51,8 +51,8 @@ class CheckoutController extends Controller
     }
 
     public function success(){
-        return Session::get('customerName');
-        return view('front-end.checkout.success-order');
+//        return Session::get('customerName');
+        return view('front-end.checkout.success-order')->with('message', 'Your Order Has Been submitted. Please Wait for the Confirmation!!');
     }
 
 }
