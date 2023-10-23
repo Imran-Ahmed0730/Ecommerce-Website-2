@@ -5,3 +5,4 @@
 
 <!-- Core Css -->
 <link  id="themeColors"  rel="stylesheet" href="{{asset('/')}}/admin/dist/css/style.min.css" />
+<link rel="stylesheet" href="{{asset('/')}}/admin/dist/css/invoice.css" />

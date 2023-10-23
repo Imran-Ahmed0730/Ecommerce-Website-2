@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-3">
                         <div class="text-center mb-n5">
-                            <img src="{{asset('/')}}/admin//dist/images/breadcrumb/ChatBc.png" alt="" class="img-fluid mb-n4">
+                            <img src="{{asset('/')}}/admin/dist/images/breadcrumb/ChatBc.png" alt="" class="img-fluid mb-n4">
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,9 @@
                                             <i class="bi bi-pen"></i></a>
                                         <a href="{{route('order.invoice.view', ['id'=>$order->id])}}" class="btn btn-indigo" title="View Invoice" style="border-radius: 20%; padding: 7px;">
                                             <i class="bi bi-receipt"></i></a>
-                                        <a href="{{route('order.invoice.print', ['id'=>$order->id])}}" class="btn btn-success mx-1" title="Print Invoice" style="border-radius: 20%; padding: 7px;">
+                                        <a href="javascript:window.print()" class="btn btn-success mx-1" title="Print Invoice" style="border-radius: 20%; padding: 7px;">
+                                            <i class="ti ti-arrow-big-down-filled"></i></a>
+                                        <a href="{{route('order.invoice.print', ['id'=>$order->id])}}" class="btn btn-atc mx-1" title="Print Invoice" style="border-radius: 20%; padding: 7px;">
                                             <i class="bi bi-printer-fill"></i></a>
                                         <form action="{{route('order.delete')}}" method="post">
                                             @csrf
