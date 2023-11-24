@@ -56,6 +56,10 @@
                                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label">Image</label>
+                                    <input type="file" class="form-control" name="image" id="">
+                                </div>
+                                <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label">Code</label>
                                     <input type="password" class="form-control" name="" id="code" min="3">
                                 </div>

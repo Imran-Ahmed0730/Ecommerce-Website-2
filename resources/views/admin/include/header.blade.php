@@ -201,7 +201,8 @@
                                     </a>
                                 </div>
                                 <div class="d-grid py-4 px-7 pt-8">
-                                    <a href="" onclick="event.preventDefault(); document.getElementById('logoutForm').submit()" class="btn btn-outline-primary">Log Out</a>
+                                    <a href="" onclick="event.preventDefault(); document.getElementById('logoutForm').submit()"
+                                       class="btn btn-outline-primary">Log Out</a>
                                     <form action="{{route('logout')}}" id="logoutForm" method="post">
                                         @csrf
                                     </form>
